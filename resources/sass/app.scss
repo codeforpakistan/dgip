@@ -1,0 +1,31 @@
+$body-bg: #ECEFF1;
+$primary: #01579B;
+
+$gray-200: #CFD8DC;
+$secondary: #B0BEC5;
+$dark: #37474F;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+html, body { 
+    height: 100%; 
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+.offcanvas-collapse {
+    position: fixed;
+    z-index: 999; 
+    top: 0; /* Height of navbar */
+    bottom: 0;
+    left: 0;
+    width: 20rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+}
+.offcanvas-collapse.open {
+    visibility: visible;
+}
+
+.gray-200 { background-color: $gray-200; }
