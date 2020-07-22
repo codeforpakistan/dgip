@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Office;
+use App\Branch;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,15 @@ Route::prefix('passport')->group(function () {
         Route::view('/', 'passport.overview')->name('overview');
         Route::view('types', 'passport.types')->name('types');
         Route::view('process', 'passport.process')->name('process');
-        Route::view('offices', 'passport.offices')->name('offices');
-        Route::view('zones', 'passport.zones')->name('zones');
-        Route::view('branches', 'passport.branches')->name('branches');
+        Route::view('offices', 'passport.offices', [
+            'regions' => Office::select('region')->distinct()->get(),
+            'offices' => Office::all()
+        ])->name('offices');
+        Route::view('fee', 'passport.fees')->name('fees');
+        Route::view('branches', 'passport.branches', [
+            'regions' => Branch::select('region')->distinct()->get(),
+            'branches' => Branch::all()
+        ])->name('branches');
     });
 });
 

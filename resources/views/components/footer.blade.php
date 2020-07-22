@@ -13,7 +13,7 @@
         <img class="card-img-top" src="{{ asset('img/helpline.jpg') }}">
         <div class="card-body">
           <h5 class="card-title">DGI&amp;P Help Line</h5>
-          <p class="card-text">Call now <a class="stretched-link" href="tel:+9280034477">0800-34477</a></p>
+          <p class="card-text">Call now <a class="stretched-link" href="tel:+9251111344777">+92 (51) 111-344-777</a></p>
         </div>
       </div>
 
@@ -48,8 +48,8 @@
           <a class="nav-link px-0 text-light" href="{{ route('passport.overview') }}">Overview</a>
           <a class="nav-link px-0 text-light" href="{{ route('passport.types') }}">Passport Types</a>
           <a class="nav-link px-0 text-light" href="{{ route('passport.process') }}">Application Process</a>
+          <a class="nav-link px-0 text-light" href="{{ route('passport.fees') }}">Fees and Charges</a>
           <a class="nav-link px-0 text-light" href="{{ route('passport.offices') }}">Regional Offices</a>
-          <a class="nav-link px-0 text-light" href="{{ route('passport.zones') }}">RPO Zones</a>
           <a class="nav-link px-0 text-light" href="{{ route('passport.branches') }}">Bank Branches</a>
         </nav>
       </div>

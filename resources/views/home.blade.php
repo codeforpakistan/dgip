@@ -14,14 +14,14 @@
           <p class="card-text"><a href="http://onlinemrp.dgip.gov.pk/" class="stretched-link">Apply for renewal</a> of your Machine Readable Passport, if your passport has expired OR its validity is less than 7 months.</p>
         </div>
         <div class="card card-body border-light shadow-sm mb-3">
-          <h5 class="card-title">Find an office near you</h5>
-          <p class="card-text">Lookup our <a href="{{ route('passport.offices') }}" class="stretched-link">office locations</a> and find the one nearest you.</p>
-        </div>
-        <div class="card card-body border-light shadow-sm mb-3">
           <h5 class="card-title">Know the application process</h5>
           <p class="card-text">Learn more about the <a href="{{ route('passport.process') }}" class="stretched-link">application process</a>, and documentary requirements, to avoid any inconvenience.</p>
         </div>
-        <a class="d-block" href="{{ route('passport.overview') }}">More...</a>
+        <div class="card card-body border-light shadow-sm mb-3">
+          <h5 class="card-title">Find an office near you</h5>
+          <p class="card-text">Lookup our <a href="{{ route('passport.offices') }}" class="stretched-link">office locations</a> and find the one nearest you.</p>
+        </div>
+        <a class="d-block" href="{{ route('passport.overview') }}">More&hellip;</a>
       </div>
       <div class="col-md mb-3">
         <h3 class="display-4">Visa</h3>
@@ -38,7 +38,7 @@
           <p class="card-text">Find our how to apply for a Pakistani visa, application fee, and other requirements. </p>
           <a href="{{ route('visa.overview') }}" class="stretched-link">Read more</a>
         </div>
-        <a class="d-block" href="{{ route('visa.overview') }}">More...</a>
+        <a class="d-block" href="{{ route('visa.overview') }}">More&hellip;</a>
       </div>
       <div class="col-md mb-3">
         <h3 class="display-4">Immigration</h3>
@@ -55,7 +55,7 @@
           <h5 class="card-title">Frequently Asked Questions</h5>
           <p class="card-text">Look through compiled answers to the more <a href="{{ route('immigration.questions') }}" class="stretched-link">frequently asked quesions</a>.</p>
         </div>
-        <a class="d-block" href="{{ route('immigration.overview') }}">More...</a>
+        <a class="d-block" href="{{ route('immigration.overview') }}">More&hellip;</a>
       </div>
     </div>
   </div>

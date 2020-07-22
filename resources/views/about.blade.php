@@ -2,12 +2,15 @@
 
 @section('content')
 
-<section class="">
+<section class="py-5">
   <div class="container">
-    <div class="row">
-      <aside class="col-auto">Sidebar</aside>
-      <article class="col">VISA</article>
-    </div>
+    <header class="mb-5">
+      <h1 class="display-4">About Us</h1>
+      <p class="lead">Find here contact information of various sections of the Directorate General office</p>
+    </header>
+    <article>
+      
+    </article>
   </div>
 </section>
 
