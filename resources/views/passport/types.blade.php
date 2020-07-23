@@ -14,14 +14,14 @@
       <p>There are three types of Machine Readable Passports (MRPs) being issued:</p>
 
       <div class="card-deck">
-        <div class="card border-light shadow-sm">
+        <div class="card border-0 shadow-sm">
           <img src="{{ asset('images/blank.svg') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h3 class="card-title">Ordinary</h3>
             <p class="card-text">Ordinary Machine Readable Passport is issued to all citizens of Pakistan</p>
           </div>
         </div>
-        <div class="card border-light shadow-sm">
+        <div class="card border-0 shadow-sm">
           <img src="{{ asset('images/blank.svg') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h3 class="card-title">Diplomatic</h3>
@@ -29,7 +29,7 @@
             <a href="{{ asset('downloads/Para_45.pdf') }}" target="_blank" class="btn btn-primary btn-block">#45 of Passport &amp; Visa Manual 2006</a>
           </div>
         </div>
-        <div class="card border-light shadow-sm">
+        <div class="card border-0 shadow-sm">
           <img src="{{ asset('images/blank.svg') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h3 class="card-title">Official</h3>

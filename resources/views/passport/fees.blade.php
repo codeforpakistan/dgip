@@ -15,7 +15,7 @@
       <article class="col">
         <p class="lead">The following tables outline the fees charged for applying for a machine readable passport.</p>
 
-        <div class="card card-body border-light shadow-sm mb-5">
+        <div class="card card-body border-0 shadow-sm mb-5">
           <h2 class="card-title">5 Year Validity</h2>
           <div class="table-responsive">
             <table class="table mb-0">
@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <div class="card card-body border-light shadow-sm mb-5">
+        <div class="card card-body border-0 shadow-sm mb-5">
           <h2 class="card-title">10 Year Validity</h2>
           <div class="table-responsive">
             <table class="table mb-0">

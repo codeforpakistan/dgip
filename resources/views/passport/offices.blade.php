@@ -11,7 +11,7 @@
       <p class="lead">Locations, addresses, and phone numbers of regional passport offices</p>
     </header>
     <article>
-      <div class="card card-body border-light shadow-sm">
+      <div class="card card-body border-0 shadow-sm">
         <ul class="nav nav-tabs" role="tablist">
           @foreach($regions as $region)
           <li class="nav-item"><a class="nav-link @if ($loop->first) active @endif" data-toggle="tab" href="#{{ Str::camel($region->region) }}" role="tab">{{ $region->region }}</a></li>

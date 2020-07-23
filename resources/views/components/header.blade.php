@@ -3,11 +3,21 @@
   <nav class="navbar navbar-light">
 
     <button class="btn btn-primary-outline" type="button" data-toggle="offcanvas">
-      <i data-feather="menu" class="text-light"></i> <span class="align-middle text-light">MENU</span>
+      <i data-feather="menu" class="text-light"></i> 
     </button>
+    <a href="{{ route('home') }}" class="navbar-brand text-light">Immigration &amp; Passports</a>
     <span class="flex-grow-1"></span>
     <a class="btn btn-primary-outline" href="{{ route('about') }}"><i data-feather="info" class="text-light"></i></a>
     <a class="btn btn-primary-outline" href="{{ route('contact') }}"><i data-feather="phone" class="text-light"></i></a>
+    @role('admin')
+    <a class="btn btn-primary-outline" href="{{ route('admin.home') }}"><i data-feather="settings" class="text-light"></i></a>
+    @endrole
+    @auth
+    <a class="btn btn-primary-outline" href="{{ route('logout') }}"><i data-feather="log-out" class="text-light" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"></i></a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      @csrf
+    </form>
+    @endauth
 
     <div class="navbar-collapse offcanvas-collapse bg-light shadow">
       <button class="btn btn-primary-outline my-2" type="button" data-toggle="offcanvas">
@@ -33,7 +43,7 @@
             <a class="dropdown-item" href="{{ route('visa.overview') }}">Overview</a>
             <a class="dropdown-item" href="{{ route('visa.categories') }}">Visa Categories</a>
             <a class="dropdown-item" href="{{ route('visa.indians') }}">Indian Nationals</a>
-            <a class="dropdown-item" href="{{ route('visa.fee') }}">Application Fee</a>
+            <a class="dropdown-item" href="{{ route('visa.fees') }}">Application Fee</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -62,13 +72,10 @@
       <div class="row">
         <div class="col col-lg-8">
           <div class="media">
-            <img class="mr-3" src="{{ asset('img/white.svg') }}" height="80" alt="DGI&amp;P">
+            <img class="mr-3 d-none d-sm-block align-self-center" src="{{ asset('img/white.svg') }}" height="80" alt="DGI&amp;P">
             <div class="media-body">
-              <h3 class="mt-0"><span class="d-block d-md-inline">Directorate General of </span>Immigration &amp; Passports</h3>
-              <p class="lead"><span class="d-none d-sm-inline">Ministry of Interior, </span>Government of Pakistan</p>
-              @if (Route::is('home'))
-              <p class="small">The Office of DG(I&P) is an attached department of Ministry of Interior, responsible for issuance of Passports, Visas, Pakistan Citizenship and Renunciation of Pakistan Citizenship Certificates.</p>
-              @endif
+              <h3 class="mb-0"><span class="d-block d-md-inline">Directorate General of </span>Immigration &amp; Passports</h3>
+              <p class="lead mb-0"><span class="d-none d-sm-inline">Ministry of Interior, </span>Government of Pakistan</p>
             </div>
           </div>
         </div>

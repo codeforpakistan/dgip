@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,7 +12,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(BranchSeeder::class);
-        $this->call(OfficeSeeder::class);
+        $this->call(BankBranchSeeder::class);
+        $this->call(RegionalOfficeSeeder::class);
+        $this->call(VisaCategorySeeder::class);
+        $this->call(CountrySeeder::class);
+
+        Role::create(['name' => 'admin']);
+        Role::create(['name' => 'staff']);
+        Role::create(['name' => 'user']);
+
+        DB::table('users')->insert(['name' => 'admin', 'email' => 'admin@dgip.gov.pk', 'password' => Hash::make('admin')]);
+
+        $admin = App\User::find(1);
+        $admin->assignRole('admin');
     }
 }

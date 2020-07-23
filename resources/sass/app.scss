@@ -1,12 +1,8 @@
-$body-bg: #ECEFF1;
-$primary: #01579B;
+// Variables
+@import 'variables';
 
-$gray-200: #CFD8DC;
-$secondary: #B0BEC5;
-$dark: #37474F;
-
-@import "../../node_modules/bootstrap/scss/bootstrap";
-
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 html, body { 
     height: 100%; 
     overflow-x: hidden; /* Prevent scroll on narrow devices */
@@ -39,7 +35,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: $font-weight-normal; letter-spacing: -0.06
     height: 16px;
 }
 
-.feather-32{
-    width: 32px;
-    height: 32px;
+.feather-lg{
+    width: 160px;
+    height: 160px;
 }

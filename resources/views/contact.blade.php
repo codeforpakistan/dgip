@@ -12,7 +12,7 @@
     </header>
     <article>
 
-      <div class="card border-light shadow-sm mb-5">
+      <div class="card border-0 shadow-sm mb-5">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.866274406619!2d73.04540781449614!3d33.686526644362566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd19bc22bf5%3A0xfaffe85f4db96aec!2sDirectorate+General+Immigration+and+Passport+Headquarter%2C+Islamabad.!5e0!3m2!1sen!2s!4v1517220774489" width="1110" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         <div class="card-body">
           <address>
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="card card-body border-light shadow-sm mb-5">
+      <div class="card card-body border-0 shadow-sm mb-5">
         <h2 class="card-title">Contact Information</h2>
         <div class="table-responsive">
 
@@ -115,7 +115,7 @@
       <h2>Email your queries to relevant sections only</h2>
 
       <div class="card-columns">
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Director General</strong><br>
             Email <a href="mailto:dg@dgip.gov.pk">dg@dgip.gov.pk</a> with...
@@ -127,7 +127,7 @@
             <li>Contact Address</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Overseas complaints</strong><br>
             Email <a href="mailto:overseas.complaints@dgip.gov.pk">overseas.complaints@dgip.gov.pk</a> with...
@@ -139,7 +139,7 @@
             <li>Contact Address</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Queries / Information</strong><br>
             Email <a href="mailto:info@dgip.gov.pk">info@dgip.gov.pk</a> with...
@@ -151,7 +151,7 @@
             <li>Contact Address</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Renunciation of Citizenship</strong><br>
             Email <a href="mailto:immigration@dgip.gov.pk">immigration@dgip.gov.pk</a> with...
@@ -165,7 +165,7 @@
             <li>Passport No. (if applicable)</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Black-List Cases</strong><br>
             Email <a href="mailto:blcell@dgip.gov.pk">blcell@dgip.gov.pk</a> with...
@@ -179,7 +179,7 @@
             <li>Passport No. (if applicable)</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Passport Policy</strong><br>
             Email <a href="mailto:passport.policy@dgip.gov.pk">passport.policy@dgip.gov.pk</a> with...
@@ -193,7 +193,7 @@
             <li>Passport No. (if applicable)</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Visa Related Issues</strong><br>
             Email <a href="mailto:visa.policy@dgip.gov.pk">visa.policy@dgip.gov.pk</a> with...
@@ -206,7 +206,7 @@
             <li>Passport No</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Diplomatic &amp; Official passports</strong><br>
             Email <a href="mailto:dip.off.passport@dgip.gov.pk">dip.off.passport@dgip.gov.pk</a> with...
@@ -221,7 +221,7 @@
             <li>Name of Country; where case has been initiated</li>
           </ul>
         </div>
-        <div class="card card-body border-light shadow-sm">
+        <div class="card card-body border-0 shadow-sm">
           <address>
             <strong>Application Tracking</strong><br>
             Email <a href="mailto:opts@dgip.gov.pkk">opts@dgip.gov.pk</a> with...

@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Office;
-use App\Branch;
+use App\RegionalOffice;
+use App\BankBranch;
+use App\VisaCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Branch;
 |
 */
 
+Auth::routes();
+
 Route::view('/', 'home')->name('home');
 
 Route::prefix('passport')->group(function () {
@@ -23,13 +26,13 @@ Route::prefix('passport')->group(function () {
         Route::view('types', 'passport.types')->name('types');
         Route::view('process', 'passport.process')->name('process');
         Route::view('offices', 'passport.offices', [
-            'regions' => Office::select('region')->distinct()->get(),
-            'offices' => Office::all()
+            'regions' => RegionalOffice::select('region')->distinct()->get(),
+            'offices' => RegionalOffice::all()
         ])->name('offices');
         Route::view('fee', 'passport.fees')->name('fees');
         Route::view('branches', 'passport.branches', [
-            'regions' => Branch::select('region')->distinct()->get(),
-            'branches' => Branch::all()
+            'regions' => BankBranch::select('region')->distinct()->get(),
+            'branches' => BankBranch::all()
         ])->name('branches');
     });
 });
@@ -37,9 +40,28 @@ Route::prefix('passport')->group(function () {
 Route::prefix('visa')->group(function () {
     Route::name('visa.')->group(function () {
         Route::view('/', 'visa.overview')->name('overview');
-        Route::view('categories', 'visa.categories')->name('categories');
+        Route::view('process', 'visa.process')->name('process');
+
+        Route::view('categories', 'visa.categories', [
+            'visas' => VisaCategory::all()
+        ])->name('categories');
+        Route::get('categories/{slug}', function ($slug) {
+            return view('visa.category', [
+                'visa' => VisaCategory::where('slug', $slug)->first()
+            ]);
+        })->name('category');
+        Route::get('categories/{slug}/edit', function ($slug) {
+            return view('visa.edit_category', [
+                'visa' => VisaCategory::where('slug', $slug)->first()
+            ]);
+        })->name('edit_category');
+        
         Route::view('indian_nationals', 'visa.indians')->name('indians');
-        Route::view('fee', 'visa.fee')->name('fee');
+        Route::view('fees', 'visa.fees')->name('fees');
+        Route::view('registration', 'visa.registration')->name('registration');
+        Route::view('overstay', 'visa.overstay')->name('overstay');
+        Route::view('extension', 'visa.extension')->name('extension');
+        Route::view('abolition', 'visa.abolition')->name('abolition');
     });
 });
 
@@ -59,3 +81,18 @@ Route::prefix('immigration')->group(function () {
 Route::view('about', 'about')->name('about');
 Route::view('contact', 'contact')->name('contact');
 Route::view('jobs', 'jobs')->name('jobs');
+
+Route::prefix('admin')->group(function () {
+    Route::name('admin.')->group(function () {
+        Route::namespace('Admin')->group(function () {
+            Route::middleware('auth')->group(function () {
+                Route::get('/', 'AdminController')->name('home');
+                Route::resource('visa_categories', 'Visa\CategoryController');
+                Route::resource('visa_fees', 'Visa\FeeController');
+                Route::resource('regional_offices', 'Passport\OfficeController');
+                Route::resource('bank_branches', 'Passport\BranchController');
+                Route::resource('updates', 'UpdateController');
+            });
+        });
+    });
+});
