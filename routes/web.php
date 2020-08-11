@@ -20,50 +20,55 @@ Auth::routes();
 
 Route::view('/', 'home')->name('home');
 
-Route::prefix('passport')->group(function () {
-    Route::name('passport.')->group(function () {
-        Route::view('/', 'passport.overview')->name('overview');
-        Route::view('types', 'passport.types')->name('types');
-        Route::view('process', 'passport.process')->name('process');
-        Route::view('offices', 'passport.offices', [
-            'regions' => RegionalOffice::select('region')->distinct()->get(),
-            'offices' => RegionalOffice::all()
-        ])->name('offices');
-        Route::view('fee', 'passport.fees')->name('fees');
-        Route::view('branches', 'passport.branches', [
-            'regions' => BankBranch::select('region')->distinct()->get(),
-            'branches' => BankBranch::all()
-        ])->name('branches');
+if (Schema::hasTable('regional_offices') && Schema::hasTable('bank_branches'))
+{
+    Route::prefix('passport')->group(function () {
+        Route::name('passport.')->group(function () {
+            Route::view('/', 'passport.overview')->name('overview');
+            Route::view('types', 'passport.types')->name('types');
+            Route::view('process', 'passport.process')->name('process');
+            Route::view('offices', 'passport.offices', [
+                'regions' => RegionalOffice::select('region')->distinct()->get(),
+                'offices' => RegionalOffice::all()
+            ])->name('offices');
+            Route::view('fee', 'passport.fees')->name('fees');
+            Route::view('branches', 'passport.branches', [
+                'regions' => BankBranch::select('region')->distinct()->get(),
+                'branches' => BankBranch::all()
+            ])->name('branches');
+        });
     });
-});
+};
 
-Route::prefix('visa')->group(function () {
-    Route::name('visa.')->group(function () {
-        Route::view('/', 'visa.overview')->name('overview');
-        Route::view('process', 'visa.process')->name('process');
+if (Schema::hasTable('visa_categories')) {
+    Route::prefix('visa')->group(function () {
+        Route::name('visa.')->group(function () {
+            Route::view('/', 'visa.overview')->name('overview');
+            Route::view('process', 'visa.process')->name('process');
 
-        Route::view('categories', 'visa.categories', [
-            'visas' => VisaCategory::all()
-        ])->name('categories');
-        Route::get('categories/{slug}', function ($slug) {
-            return view('visa.category', [
-                'visa' => VisaCategory::where('slug', $slug)->first()
-            ]);
-        })->name('category');
-        Route::get('categories/{slug}/edit', function ($slug) {
-            return view('visa.edit_category', [
-                'visa' => VisaCategory::where('slug', $slug)->first()
-            ]);
-        })->name('edit_category');
-        
-        Route::view('indian_nationals', 'visa.indians')->name('indians');
-        Route::view('fees', 'visa.fees')->name('fees');
-        Route::view('registration', 'visa.registration')->name('registration');
-        Route::view('overstay', 'visa.overstay')->name('overstay');
-        Route::view('extension', 'visa.extension')->name('extension');
-        Route::view('abolition', 'visa.abolition')->name('abolition');
+            Route::view('categories', 'visa.categories', [
+                'visas' => VisaCategory::all()
+            ])->name('categories');
+            Route::get('categories/{slug}', function ($slug) {
+                return view('visa.category', [
+                    'visa' => VisaCategory::where('slug', $slug)->first()
+                ]);
+            })->name('category');
+            Route::get('categories/{slug}/edit', function ($slug) {
+                return view('visa.edit_category', [
+                    'visa' => VisaCategory::where('slug', $slug)->first()
+                ]);
+            })->name('edit_category');
+            
+            Route::view('indian_nationals', 'visa.indians')->name('indians');
+            Route::view('fees', 'visa.fees')->name('fees');
+            Route::view('registration', 'visa.registration')->name('registration');
+            Route::view('overstay', 'visa.overstay')->name('overstay');
+            Route::view('extension', 'visa.extension')->name('extension');
+            Route::view('abolition', 'visa.abolition')->name('abolition');
+        });
     });
-});
+};
 
 Route::prefix('immigration')->group(function () {
     Route::name('immigration.')->group(function () {
