@@ -28,7 +28,7 @@
         <h2 class="card-title">Contact Information</h2>
         <div class="table-responsive">
 
-          <table class="table table-striped table-sm mb-0">
+          <table class="table table-striped mb-0">
             <thead>
               <tr>
                 <th>Designation</th>

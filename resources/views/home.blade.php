@@ -19,7 +19,7 @@
         </div>
         <div class="card card-body border-0 shadow-sm mb-3">
           <h5 class="card-title">Find an office near you</h5>
-          <p class="card-text">Lookup our <a href="{{ route('passport.offices') }}" class="stretched-link">office locations</a> and find the one nearest you.</p>
+          <p class="card-text">Lookup our <a href="{{ route('offices') }}" class="stretched-link">office locations</a> and find the one nearest you.</p>
         </div>
         <a class="d-block" href="{{ route('passport.overview') }}">More&hellip;</a>
       </div>
@@ -61,6 +61,30 @@
   </div>
 </section>
 
+<section class="bg-white py-5">
+  <div class="container">
+    <h3 class="display-4 flex-grow-1">Senior Management</h3>
+    <div class="card-deck">
+
+      @foreach ($officers as $officer)
+      <div class="card bg-light shadow-sm">
+        <div class="row no-gutters">
+          <div class="col-5">
+            <img src="{{ asset('storage/' . Str::of($officer->photo)->split('/\//')[1]) }}" class="card-img rounded-0" alt="...">
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title">{{ $officer->name }}</h5>
+              <p class="card-text">{{ $officer->title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endforeach
+    </div>
+  </div>
+</section>
+
 <!-- NEWS -->
 <section class="gray-200 py-5">
   <div class="container">
@@ -75,65 +99,22 @@
     </div>
     <div id="news" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner p-1">
-        <div class="carousel-item active">
+        @foreach($updates->chunk(3) as $chunk)
+        <div class="carousel-item @if ($loop->iteration == 1) active @endif">
           <div class="card-deck">
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            @foreach($chunk as $update)
+            <div class="card border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><a class="stretched-link" href="{{ route('updates.show', $update->slug) }}">{{ $update->title }}</a></h5>
+                <p class="card-text">{{ $update->summary }}</p>
+                <p class="card-text"><small class="text-muted">{{ \Carbon\Carbon::parse($update->created_at)->format('j F Y') }}</small></p>
+              </div>
             </div>
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+            @endforeach
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="card-deck">
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-deck">
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="card card-body border-0 shadow-sm">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
-      
     </div>
   </div>
 </section>

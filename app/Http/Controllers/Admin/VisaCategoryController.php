@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Visa;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\VisaCategory;
 
-class CategoryController extends Controller
+class VisaCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.

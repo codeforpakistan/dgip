@@ -57,8 +57,7 @@
           <a class="nav-link px-0 text-light" href="{{ route('passport.types') }}">Passport types</a>
           <a class="nav-link px-0 text-light" href="{{ route('passport.process') }}">Application process</a>
           <a class="nav-link px-0 text-light" href="{{ route('passport.fees') }}">Fees and charges</a>
-          <a class="nav-link px-0 text-light" href="{{ route('passport.offices') }}">Regional offices</a>
-          <a class="nav-link px-0 text-light" href="{{ route('passport.branches') }}">Bank branches</a>
+          
         </nav>
       </div>
       <div class="col-md-3 col-sm-6 mb-3">
@@ -81,7 +80,6 @@
           <a class="nav-link px-0 text-light" href="{{ route('immigration.duality') }}">Dual Nationality</a>
           <a class="nav-link px-0 text-light" href="{{ route('immigration.process') }}">Application Process</a>
           <a class="nav-link px-0 text-light" href="{{ route('immigration.renunciation') }}">Renunciation of Citizenship</a>
-          <a class="nav-link px-0 text-light" href="{{ route('immigration.guidelines') }}">Immigration Guidelines</a>
           <a class="nav-link px-0 text-light" href="{{ route('immigration.questions') }}">Frequently Asked Questions</a>
           <a class="nav-link px-0 text-light" href="{{ route('immigration.downloads') }}">Downloads</a>
         </nav>
@@ -105,12 +103,13 @@
       <div class="col-md-9 d-flex flex-column pt-3">
         <p>
           <a class="text-light mr-3" href="{{ route('about') }}">About DGI&amp;P</a>
-          <a class="text-light mr-3" href="{{ route('jobs') }}">Job Openings</a>
+          <a class="text-light mr-3" href="{{ route('offices') }}">Regional offices</a>
+          <!-- <a class="text-light mr-3" href="{{ route('jobs') }}">Job Openings</a> -->
           <a class="text-light mr-3" href="{{ route('contact') }}">Contact</a> </p>
         <p>Copyright &copy; 2020 Directorate General of Immigration &amp; Passports, Ministry of Interior, Government of Pakistan.</p>
       </div>
       <div class="col-md-3 d-none d-md-block">
-        <img class="float-right" src="{{ asset('img/grey.svg') }}" height="100">
+        <img class="float-right" src="{{ asset('img/white.svg') }}" height="100">
       </div>
     </div>
   </div>

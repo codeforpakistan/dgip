@@ -1,10 +1,14 @@
 <div class="table-responsive">
-  <table class="table table-striped table-sm">
+  <table class="table table-striped mb-0">
     <thead>
       <tr>
         @foreach (array_keys($items->first()->toArray()) as $key)
-        @if (!in_array($key, ['region','image','body']))
-        <th>{{ ucwords($key) }}</th>
+        @if (!in_array($key, ['region','image','body','content','fee','slug','attachment']))
+          @if (in_array($key, ['created_at', 'updated_at']))
+          <th>{{ strtoupper(Str::of($key)->replace('_at', '')) }}</th>
+          @else
+          <th>{{ strtoupper($key) }}</th>
+          @endif
         @endif
         @endforeach
         <th width="1%"></th>
@@ -14,8 +18,12 @@
       @foreach ($items as $item)
       <tr>
         @foreach ($item->toArray() as $key => $value)
-        @if (!in_array($key, ['region','image','body']))
-        <td>{{ $value }}</td>
+        @if (!in_array($key, ['region','image','body','content','fee','slug','attachment']))
+          @if (in_array($key, ['created_at', 'updated_at']))
+          <td>{{ \Carbon\Carbon::parse($value)->diffForHumans() }}</td>
+          @else
+          <td>{{ $value }}</td>
+          @endif
         @endif
         @endforeach
         <td class="text-nowrap">

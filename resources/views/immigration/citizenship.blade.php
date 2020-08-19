@@ -8,10 +8,9 @@
   <div class="container">
     <header class="mb-5">
       <h1 class="display-4">Pakistani Citizenship</h1>
-      <p class="lead">Learn about immigrating to Pakistan, eligibility, and guidelines.</p>
+      <p class="lead">There are three categories of declared citizens of Pakistan including citizens by birth, by descent and by migration, which are briefly mentioned below. (Please see relevant sections of Pakistan citizenship Act, 1951 for details)</p>
     </header>
     <article>
-      <p class="lead">There are three categories of declared citizens of Pakistan including citizens by birth, by descent and by migration, which are briefly mentioned below. (Please see relevant sections of Pakistan citizenship Act, 1951 for details)</p>
 
       <div class="card-deck">
 
@@ -41,6 +40,18 @@
             <p>The persons who migrated to Pakistan from the territories in the indo-Pakistan subcontinent before the commencement of Pakistan Citizenship Act, 1951 are declared citizens of Pakistan.</p>
           </div>
         </div>
+      </div>
+
+      <div class="card card-body border-0 shadow-sm">
+
+      <h2 class="card-title">Registration Requirement for Overseas Pakistanis</h2>
+      <dl>
+        <dt>Registration of Birth of a Child of Citizen of Pakistan Born in Country Outside Pakistan</dt>
+        <dd>The birth of such children may be reported by the parents or guardians on Form S to the concerning Pakistan's Mission abroad within a period of six months.</dd>
+
+        <dt>Annual Registration by a Citizen of Pakistan Resident Abroad</dt>
+        <dd>Citizens of Pakistan are required to get themselves registered in the quarter of every year with Pakistan Mission abroad annually.</dd>
+      </dl>
       </div>
 
     </article>

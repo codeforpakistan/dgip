@@ -82,7 +82,7 @@
       <aside class="col-3">
         <div class="alert alert-warning shadow-sm lead">
         <i data-feather="alert-triangle"></i>
-          Applicants must submit appropriate passport fee through the <a href="{{ route('passport.branches') }}">authorised branches</a> of the National Bank of Pakistan, <strong>BEFORE</strong> visiting the regional passport offices.
+          Applicants must submit appropriate passport fee through the <a href="{{ route('branches') }}">authorised branches</a> of the National Bank of Pakistan, <strong>BEFORE</strong> visiting the regional passport offices.
         </div>
       </aside>
     </div>

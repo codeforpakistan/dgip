@@ -16,7 +16,7 @@
           <img src="{{ asset('images/banner_visa.jpg') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h2 class="card-title">Apply Online</h2>
-            <p class="card-text"><a href="https://visa.nadra.gov.pk/" target="_blank" class="stretched-link">Visit our site</a> to apply online for your machine readable visa, pay your fee and track your application.</p>
+            <p class="card-text"><a href="https://visa.nadra.gov.pk/" target="_blank" class="underline stretched-link">Visit our site</a> to apply online for your machine readable visa, pay your fee and track your application.</p>
           </div>
         </div>
       </div>

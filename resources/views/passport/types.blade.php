@@ -40,20 +40,21 @@
       </div>
 
       <h2 class="mt-5">Validity</h2>
-      <p>Machine Readable Passports are valid for <strong>FIVE</strong> and <strong>TEN</strong> years, subject to <a href="{{ route('passport.fees') }}">fee deposit</a>.</p>
+      <p>Machine Readable Passports are valid for <strong>FIVE</strong> and <strong>TEN</strong> years, subject to <a class="underline" href="{{ route('passport.fees') }}">fee deposit</a>.</p>
       <ul>
         <li>Passport having validity of 5 years CANNOT be converted into validity for 10 years.</li>
         <li>Children under 15 years of age will be issued a passport having 5 years validity.</li>
       </ul>
 
       <h2 class="mt-5">Booklets</h2>
-      <p>Machine Readable Passports booklets are available in <strong>THREE</strong> sizes, subject to <a href="{{ route('passport.fees') }}">fee deposit</a>.</p>
+      <p>Machine Readable Passports booklets are available in <strong>THREE</strong> sizes, subject to <a class="underline" href="{{ route('passport.fees') }}">fee deposit</a>.</p>
       <ul>
         <li>36 pages (standard booklet)</li>
         <li>72 pages (for frequent travelers)</li>
         <li>100 pages (for frequent travelers)</li>
       </ul>
     </article>
+
   </div>
 </section>
 

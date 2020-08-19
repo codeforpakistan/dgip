@@ -3,18 +3,19 @@
 @section('page')
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="{{ route('admin.home') }}">Console</a>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ route('home') }}">Website</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('admin.home') }}">Home</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Passport</a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">About</a>
           <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ route('admin.officers.index') }}">Senior Management</a>
             <a class="dropdown-item" href="{{ route('admin.regional_offices.index') }}">Regional Offices</a>
             <a class="dropdown-item" href="{{ route('admin.bank_branches.index') }}">Bank Branches</a>
           </div>
@@ -50,8 +51,17 @@
   </div>
 </nav>
 
-<section class="my-5">
-  <div class="container">
+<section class="my-3">
+  <div class="container-fluid">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul class="mb-0">
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
     @yield('content')
   </div>
 </section>

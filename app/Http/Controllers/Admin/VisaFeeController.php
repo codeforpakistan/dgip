@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Visa;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\VisaFee;
 
-class FeeController extends Controller
+class VisaFeeController extends Controller
 {
     /**
      * Display a listing of the resource.

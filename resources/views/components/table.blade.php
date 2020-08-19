@@ -1,5 +1,5 @@
 <div class="table-responsive">
-  <table class="table table-striped table-sm text-nowrap">
+  <table class="table table-striped">
     <thead>
       <tr>
         @foreach (array_keys($items->first()->toArray()) as $key)

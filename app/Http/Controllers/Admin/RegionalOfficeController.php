@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Passport;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\BankBranch;
-use App\VisaCategory;
+use App\RegionalOffice;
 
-class BranchController extends Controller
+class RegionalOfficeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +15,13 @@ class BranchController extends Controller
      */
     public function index(Request $request)
     {
-        $items = BankBranch::select('*');
+        $items = RegionalOffice::select('*');
 
         if ($request->has('region')) $items->where('region', $request->query('region'));
-        
+
         return view('admin.index', [
             'items' => $items->paginate(),
-            'regions' => BankBranch::select('region')->distinct()->get()->pluck('region')
+            'regions' => RegionalOffice::select('region')->distinct()->get()->pluck('region')
         ]);
     }
 
@@ -33,7 +32,7 @@ class BranchController extends Controller
      */
     public function create()
     {
-        return view('admin.bank_branch_form');
+        return view('admin.regional_office_form');
     }
 
     /**
@@ -45,20 +44,20 @@ class BranchController extends Controller
     public function store(Request $request)
     {
         $valid = $request->validate([
-            'name' => 'required',
-            'city' => 'required',
-            'region' => 'required',
-            'code' => 'required',
+            'city'      => 'required',
+            'region'    => 'required',
+            'address'   => 'required',
+            'phone'     => 'required',
         ]);
 
-        $branch = new BankBranch;
-        $branch->name = $valid['name'];
-        $branch->city = $valid['city'];
-        $branch->region = $valid['region'];
-        $branch->code = $valid['code'];
-        $branch->save();
+        $visa = new RegionalOffice;
+        $visa->city     = $valid['city'];
+        $visa->region   = $valid['region'];
+        $visa->address  = $valid['address'];
+        $visa->phone    = $valid['phone'];
+        $visa->save();
 
-        return redirect()->route('admin.bank_branches.index');
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -80,8 +79,8 @@ class BranchController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.bank_branch_form', [
-            'item' => BankBranch::findOrFail($id)
+        return view('admin.regional_office_form', [
+            'item' => RegionalOffice::findOrFail($id)
         ]);
     }
 
@@ -95,20 +94,20 @@ class BranchController extends Controller
     public function update(Request $request, $id)
     {
         $valid = $request->validate([
-            'name' => 'required',
-            'city' => 'required',
-            'region' => 'required',
-            'code' => 'required',
+            'city'      => 'required',
+            'region'    => 'required',
+            'address'   => 'required',
+            'phone'     => 'required',
         ]);
 
-        $branch = BankBranch::findOrFail($id);
-        $branch->name = $valid['name'];
-        $branch->city = $valid['city'];
-        $branch->region = $valid['region'];
-        $branch->code = $valid['code'];
-        $branch->save();
+        $visa = RegionalOffice::findOrFail($id);
+        $visa->city     = $valid['city'];
+        $visa->region   = $valid['region'];
+        $visa->address  = $valid['address'];
+        $visa->phone    = $valid['phone'];
+        $visa->save();
 
-        return redirect()->route('admin.bank_branches.index');
+        return redirect()->route('admin.regional_offices.index');
     }
 
     /**
@@ -119,6 +118,8 @@ class BranchController extends Controller
      */
     public function destroy($id)
     {
-        //
+        RegionalOffice::findOrFail($id)->delete();
+
+        return redirect()->route('admin.regional_offices.index');
     }
 }

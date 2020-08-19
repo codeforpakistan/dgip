@@ -7,22 +7,15 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Show the home page
      *
-     * @return void
+     * @return View
      */
-    public function __construct()
+    public function __invoke(Request $request)
     {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
+        return view('home', [
+            'officers' => \App\Officer::all(),
+            'updates' => \App\Update::all()
+        ]);
     }
 }

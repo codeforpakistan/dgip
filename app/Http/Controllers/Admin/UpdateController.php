@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Update;
 
 class UpdateController extends Controller
 {
@@ -14,7 +16,10 @@ class UpdateController extends Controller
      */
     public function index()
     {
-        //
+        $items = Update::select('*');
+        return view('admin.index', [
+            'items' => $items->paginate()
+        ]);
     }
 
     /**
@@ -24,7 +29,7 @@ class UpdateController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.update_form');
     }
 
     /**
@@ -35,7 +40,26 @@ class UpdateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'title' => 'required',
+            'attachment' => 'file',
+            'summary' => 'required',
+            'body'  => 'required',
+        ]);
+
+        if ($request->has('attachment')) {
+            $path = $request->file('attachment')->store('public');
+        }
+
+        $update = new Update;
+        $update->title = $valid['title'];
+        $update->slug = Str::of($valid['title'])->slug('-');
+        $update->attachment = $path ?? null;
+        $update->summary = $valid['summary'];
+        $update->body = $valid['body'];
+        $update->save();
+
+        return redirect()->route('admin.updates.index');
     }
 
     /**
@@ -57,7 +81,9 @@ class UpdateController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.update_form', [
+            'item' => Update::findOrFail($id)
+        ]);
     }
 
     /**
@@ -69,7 +95,26 @@ class UpdateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $valid = $request->validate([
+            'title' => 'required',
+            'attachment' => 'file',
+            'summary' => 'required',
+            'body'  => 'required',
+        ]);
+
+        if ($request->has('attachment')) {
+            $path = $request->file('attachment') ? $request->file('attachment')->store('public') : null;
+        }
+
+        $update = Update::findOrFail($id);
+        $update->title = $valid['title'];
+        $update->slug = Str::of($valid['title'])->slug('-');
+        $update->attachment = $path ?? null;
+        $update->summary = $valid['summary'];
+        $update->body = $valid['body'];
+        $update->save();
+
+        return redirect()->route('admin.updates.index');
     }
 
     /**
@@ -80,6 +125,8 @@ class UpdateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Update::findOrFail($id)->delete();
+
+        return redirect()->route('admin.updates.index');
     }
 }

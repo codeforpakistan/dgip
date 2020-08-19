@@ -16,7 +16,7 @@
       <ol>
         <li>Valid passport: The passport should be valid for at least one year.</li>
         <li>Visa application form duly filled in.</li>
-        <li>Visa Application forms for getting visa’s either through the Interior Division or Pakistan Mission abroad.</li>
+        <li>Visa Application forms for getting visa's either through the Interior Division or Pakistan Mission abroad.</li>
       </ol>
 
       <p>The fee at present is Rs.15/- inclusive of all charges for issuance, extension or transit visas.</p>

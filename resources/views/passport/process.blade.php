@@ -11,23 +11,34 @@
       <p class="lead">Process Flow In Pakistan & Foreign Missions Abroad</p>
     </header>
     <article>
-      <p>The applicant will go through the following stages at Regional Passport Office (RPO) for obtaining the Machine Readalbe Passport (MRP):</p>
+      <section class="steps my-3 py-2">
+          <h3 class="text-center">Steps to obtain Machine Readable Passport (MRP)</h3>
+          <p class="text-center">Visit any of our Regional Passport Office (RPO), <a class="underline" href="{{ route('offices') }}">click here for list</a></p>
 
-      <blockquote class="blockquote p-3 bg-light callout">
-        <p class="mb-0">NOTE: Before arrival at the Regional Passport Office (RPO), Original Bank Challan receipt must be acquired from the authorized&nbsp;<a href="{{ route('passport.branches') }}">branches of the National Bank</a> in Pakistan and relevant bank branches for Foreign Missions respectively, by depositing the prescribed <a href="{{ route('passport.fees') }}">Passport Fee</a>.</p>
+          <div class="row">
+            <div class="col"><span class="badge rounded-pill badge-warning position-absolute mt-3 shadow">1</span>
+              <p class="position-absolute mt-5 p-4 text-center text-white">Token Counter + Photograph Capturing</p><img src="{{ asset('img/process-1.jpg') }}" class="img-fluid rounded-circle">
+            </div>
+            <div class="col"><span class="badge rounded-pill badge-warning position-absolute mt-3 shadow">2</span>
+              <p class="position-absolute mt-5 p-4 text-center text-white">Biometric Data Capturing. i.e. Finger Print</p><img src="{{ asset('img/process-2.jpg') }}" class="img-fluid rounded-circle">
+            </div>
+            <div class="col"><span class="badge rounded-pill badge-warning position-absolute mt-3 shadow">3</span>
+              <p class="position-absolute mt-5 p-4 text-center text-white">Data Entry of all the required data of the Applicant</p><img src="{{ asset('img/process-3.jpg') }}" class="img-fluid rounded-circle">
+            </div>
+            <div class="col"><span class="badge rounded-pill badge-warning position-absolute mt-3 shadow">4</span>
+              <p class="position-absolute mt-5 p-4 text-center text-white">Verification as per Office Record</p><img src="{{ asset('img/process-4.jpg') }}" class="img-fluid rounded-circle">
+            </div>
+            <div class="col"><span class="badge rounded-pill badge-warning position-absolute mt-3 shadow">5</span>
+              <p class="position-absolute mt-5 p-4 text-center text-white">Interview and Decision by Assistant Director</p><img src="{{ asset('img/process-5.jpg') }}" class="img-fluid rounded-circle">
+            </div>
+          </div>
+      </section>
+
+      <blockquote class="blockquote p-3 my-5 bg-light callout">
+        <p class="mb-0">NOTE: Before arrival at the Regional Passport Office (RPO), Original Bank Challan receipt must be acquired from the authorized <a class="underline" href="{{ route('branches') }}">branches of the National Bank</a> in Pakistan and relevant bank branches for Foreign Missions respectively, by depositing the prescribed <a class="underline" href="{{ route('passport.fees') }}">Passport Fee</a>.</p>
       </blockquote>
 
-      <ol>
-        <li>Arrival of Applicant at Customer Service Counter.</li>
-        <li>Token Counter + Capturing of Photograph</li>
-        <li>Biometric Data Capture. (Finger Prints)</li>
-        <li>Data Entry.</li>
-        <li>Verification as per Office Record. (ECL/BL)</li>
-        <li>Interview and Decision by Assistant Director.</li>
-        <li>Passport Delivery Time (Collection of Passport)</li>
-      </ol>
-
-      <h2>Step 1 – Arrival of Applicant at Customer Service Counter</h2>
+      <h2 class="mt-5">Arrival of Applicant at Customer Service Counter</h2>
 
       <ul>
         <li>The applicant will approach the customer service counter at Regional Passport Office.</li>
@@ -37,7 +48,7 @@
         <li>ALL SORTS OF ENDORSEMENTS INCLUDING NAMES OF CHILDREN IN PARENTS PASSPORTS IS Not-Allowed in the Machine Readable Passport.</li>
       </ul>
 
-      <h2>Step 2 – Token Counter + Capturing of Photograph</h2>
+      <h2 class="mt-5">Token Counter + Capturing of Photograph</h2>
 
       <ul>
         <li>The applicant will produce the original CNIC/Smart-Card/NICOP or Children Registration Certificate (CRC), in case of below 18 years of age, along with its copies and Bank Chalan Form.</li>
@@ -45,14 +56,14 @@
         <li>Token will be issued to the applicant.</li>
       </ul>
 
-      <h2>Step 3 – Biometric Data Capture (Finger Prints)</h2>
+      <h2 class="mt-5">Biometric Data Capture (Finger Prints)</h2>
 
       <ul>
         <li>The applicant after obtaining token will approach the Biometric Counter as soon as his token appears at Biometric Capturing Counter.</li>
         <li>Data Entry Operator (DEO) at the Counter will capture his right thumb, right index finger, Left Thumb and Left index finger impressions.</li>
       </ul>
 
-      <h2>Step 4 – Data Entry</h2>
+      <h2 class="mt-5">Data Entry</h2>
 
       <ul>
         <li>The Applicant will move to the Data Entry Counters as soon as his token number appears on the Counter.</li>
@@ -64,7 +75,7 @@
 
       <p>NOTE: ANY CHANGE IN THE DATA SHOULD BE POINTED OUT AT THIS STAGE. ONCE THE INFORMATION HAVE BEEN SAVED, FOR ANY MODIFICATION THE TOKEN WILL HAVE TO BE CANCELLED AND THE APPLICANT WILL HAVE TO GO THROUGH THE WHOLE PROCESS AGAIN. AFTER ALLOWING “GO AHEAD” THE DATA BY THE ASSISTANT DIRECTOR, NO CHANGE IN THE DATA WILL BE POSSIBLE.</p>
 
-      <h2>Step 5 – Verification as per Office Record (ECL/BL)</h2>
+      <h2 class="mt-5">Verification as per Office Record (ECL/BL)</h2>
 
       <ul>
         <li>The verification against office record will be carried out.</li>
@@ -72,7 +83,7 @@
         <li>In case of slightest doubt about the National Status of the applicant the case may be referred to Special Branch/IB for confirmation of his National Status as a citizen of Pakistan or otherwise.</li>
       </ul>
 
-      <h2>Step 6 – Interview &amp; Decision by Assistant Director</h2>
+      <h2 class="mt-5">Interview &amp; Decision by Assistant Director</h2>
 
       <ul>
         <li>Finally the applicant will appear before Assistant Director when his token appears on AD counter along with all the original documents.</li>
@@ -82,7 +93,7 @@
         <li>On production of data form (duly atteseted) the deferred Token will be allowed go-ahead.</li>
       </ul>
 
-      <h2>Passport Delivery Time (Collection of Passport)</h2>
+      <h2 class="mt-5">Passport Delivery Time (Collection of Passport)</h2>
 
       <ul>
         <li>After successful completion of above stages, the Applicant will be given:-

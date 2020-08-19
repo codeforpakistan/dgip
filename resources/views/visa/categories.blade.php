@@ -11,7 +11,6 @@
       <p class="lead"></p>
     </header>
     
-    <div class="card card-body border-0 shadow-sm">
     <article class="row">
       <div class="col-3">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -35,7 +34,6 @@
           </div>
         </div>
       </article>
-    </div>
 
   </div>
 </section>

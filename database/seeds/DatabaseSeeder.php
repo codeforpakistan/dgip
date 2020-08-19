@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionalOfficeSeeder::class);
         $this->call(VisaCategorySeeder::class);
         $this->call(CountrySeeder::class);
+        $this->call(OfficerSeeder::class);
 
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'staff']);

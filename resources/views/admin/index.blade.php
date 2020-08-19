@@ -3,7 +3,7 @@
 @section('content')
 <div class="card card-body border-0 shadow-sm">
   <header class="d-flex align-items-center">
-    <h3 class="card-title flex-grow-1">{{ ucwords(Str::of(Str::plural(Str::snake(class_basename($items[0]))))->replace('_', ' ')) }}</h3>
+    <h3 class="card-title flex-grow-1">{{ ucwords(Str::of(Str::plural(Str::snake(Str::of(Route::current()->uri)->split('/\//')[1])))->replace('_', ' ')) }}</h3>
 
     <div class="form-inline">
       @isset($regions)
@@ -15,12 +15,16 @@
       </select>
       @endif
 
-
-      <a href="{{ route('admin.'.Str::plural(Str::snake(class_basename($items[0]))).'.create') }}"><i data-feather="plus-circle"></i></a>
+      <a href="{{ route('admin.'.Str::plural(Str::of(Route::current()->uri)->split('/\//')[1]).'.create') }}"><i data-feather="plus-circle"></i></a>
     </div>
 
   </header>
+  @if ($items->count() > 0)
   @include('admin.components.table', ['items' => $items])
+  @else
+  No items found
+  @endif 
+  
   {{ $items->appends(['region' => request()->query('region')])->links() }}
 </div>
 @endsection

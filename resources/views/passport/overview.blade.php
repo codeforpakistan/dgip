@@ -32,7 +32,7 @@
           <div class="card card-body border-0 shadow-sm mb-3">
             <h2 class="card-title">Bank Branches</h2>
             <p class="card-text"> A list of branches of the National Bank where you can submit your fee.</p>
-            <a class="stretched-link" href="{{ route('passport.branches') }}">Learn more</a>
+            <a class="stretched-link" href="{{ route('branches') }}">Learn more</a>
           </div>
           <div class="card card-body border-0 shadow-sm mb-3">
             <h2 class="card-title">Application Process</h2>
@@ -42,7 +42,7 @@
           <div class="card card-body border-0 shadow-sm mb-3">
             <h2 class="card-title">Regional Offices</h2>
             <p class="card-text"> Find out where you can apply for your machine readable passport.</p>
-            <a class="stretched-link" href="{{ route('passport.offices') }}">Learn more</a>
+            <a class="stretched-link" href="{{ route('offices') }}">Learn more</a>
           </div>
           <div class="card card-body border-0 shadow-sm mb-3">
             <h2 class="card-title">Fees and Charges</h2>
