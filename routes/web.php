@@ -96,19 +96,21 @@ if (Schema::hasTable('officers')) {
 Route::view('contact', 'contact')->name('contact');
 Route::view('jobs', 'jobs')->name('jobs');
 
-Route::prefix('updates')->group(function () {
-    Route::name('updates.')->group(function () {
-        Route::view('', 'updates.index', [
-            'items' => Update::latest()->get()
-        ])->name('index');
-        Route::get('{slug}', function ($slug) {
-            return view('show_update', [
-                'updates' => Update::latest()->get(),
-                'item' => Update::where('slug', $slug)->firstOrFail()
-            ]);
-        })->name('show');
+if (Schema::hasTable('updates')) {
+    Route::prefix('updates')->group(function () {
+        Route::name('updates.')->group(function () {
+            Route::view('', 'updates.index', [
+                'items' => Update::latest()->get()
+            ])->name('index');
+            Route::get('{slug}', function ($slug) {
+                return view('show_update', [
+                    'updates' => Update::latest()->get(),
+                    'item' => Update::where('slug', $slug)->firstOrFail()
+                ]);
+            })->name('show');
+        });
     });
-});
+}
 
 Route::prefix('admin')->group(function () {
     Route::name('admin.')->group(function () {
