@@ -65,8 +65,8 @@
         </li>
         <div class="dropdown-divider"></div>
         <li class="nav-item"><a class="nav-link {{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}">About DGI&amp;P</a></li>
+        <li class="nav-item"><a class="nav-link {{ Route::is('updates.*') ? 'active' : '' }}" href="{{ route('updates.index') }}">News &amp; Updates</a></li>
         <li class="nav-item"><a class="nav-link {{ Route::is('offices') ? 'active' : '' }}" href="{{ route('offices') }}">Regional Offices</a>
-        <!-- <li class="nav-item"><a class="nav-link {{ Route::is('jobs') ? 'active' : '' }}" href="{{ route('jobs') }}">Jobs Openings</a></li> -->
         <li class="nav-item"><a class="nav-link {{ Route::is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact Us</a></li>
     </div>
 

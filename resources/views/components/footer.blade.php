@@ -103,8 +103,8 @@
       <div class="col-md-9 d-flex flex-column pt-3">
         <p>
           <a class="text-light mr-3" href="{{ route('about') }}">About DGI&amp;P</a>
+          <a class="text-light mr-3" href="{{ route('updates.index') }}">News &amp; Updates</a>
           <a class="text-light mr-3" href="{{ route('offices') }}">Regional offices</a>
-          <!-- <a class="text-light mr-3" href="{{ route('jobs') }}">Job Openings</a> -->
           <a class="text-light mr-3" href="{{ route('contact') }}">Contact</a> </p>
         <p>Copyright &copy; 2020 Directorate General of Immigration &amp; Passports, Ministry of Interior, Government of Pakistan.</p>
       </div>

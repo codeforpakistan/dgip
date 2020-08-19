@@ -10,7 +10,7 @@
     </header>
     <div class="row">
       <aside class="col-md">
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush mb-5">
           @foreach ($updates as $update)
           <li class="list-group-item bg-transparent px-0">
             <a class="stretched-link" href="{{ route('updates.show', $update->slug) }}">{{ $update->title }}</a>
@@ -18,6 +18,7 @@
           </li>
           @endforeach
         </ul>
+        <a href="{{ route('updates.index') }}">View all updates</a>
       </aside>
       <article class="col-md-9">
         <small>{{ \Carbon\Carbon::parse($item->updated_at)->format('j F Y') }}</small>

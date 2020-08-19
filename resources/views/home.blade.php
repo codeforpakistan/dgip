@@ -63,7 +63,8 @@
 
 <section class="bg-white py-5">
   <div class="container">
-    <h3 class="display-4 flex-grow-1">Senior Management</h3>
+    <h3 class="display-4">About DGI&amp;P</h3>
+    <p class="lead mb-5">The Office of DG. (I & P) is an attached department of Ministry of Interior, responsible to deal with the matters concerning issuance of Passports, Visas, Pakistan Citizenship and Renunciation of Pakistan Citizenship Certificates.</p>
     <div class="card-deck">
 
       @foreach ($officers as $officer)

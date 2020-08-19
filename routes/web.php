@@ -99,12 +99,12 @@ Route::view('jobs', 'jobs')->name('jobs');
 if (Schema::hasTable('updates')) {
     Route::prefix('updates')->group(function () {
         Route::name('updates.')->group(function () {
-            Route::view('', 'updates.index', [
-                'items' => Update::latest()->get()
+            Route::view('', 'updates_index', [
+                'updates' => Update::latest()->paginate()
             ])->name('index');
             Route::get('{slug}', function ($slug) {
-                return view('show_update', [
-                    'updates' => Update::latest()->get(),
+                return view('updates_show', [
+                    'updates' => Update::latest()->take(5)->get(),
                     'item' => Update::where('slug', $slug)->firstOrFail()
                 ]);
             })->name('show');
